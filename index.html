@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Markwatch — know the moment someone files a trademark like yours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="banner.css">
+<script src="pixel.js"></script>
+<style>
+:root{
+  --navy:#0F1E3D;--ink:#12213F;--paper:#fff;--bg:#F4F6FB;--line:#E2E7F2;--muted:#5A678A;
+  --accent:#F4C542;--accent-ink:#1A1300;--alert:#C0392B;--good:#1A7F4B;
+}
+*{box-sizing:border-box}
+body{margin:0;font:400 17px/1.6 "Inter","Segoe UI",sans-serif;color:var(--ink);background:var(--paper)}
+.wrap{max-width:1060px;margin-inline:auto;padding:0 20px}
+.serif{font-family:"Fraunces",Georgia,serif;font-weight:600;letter-spacing:-.01em}
+header.top{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+.brand{font-family:"Fraunces",serif;font-weight:600;font-size:1.4rem;color:var(--navy);display:flex;align-items:center;gap:8px}
+.brand .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(244,197,66,.25)}
+.btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;border-radius:10px;padding:14px 24px;text-decoration:none;font-size:1.02rem;text-align:center;border:0;cursor:pointer}
+.btn:hover{filter:brightness(1.12)}
+.btn.sm{padding:9px 16px;font-size:.95rem}
+.hero{background:var(--navy);color:#fff;border-radius:24px;padding:48px clamp(22px,5vw,60px);margin-top:8px;display:grid;grid-template-columns:1.08fr .92fr;gap:44px;align-items:center}
+.eyebrow{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#A9B6D6;font-weight:600;margin:0 0 14px}
+.hero h1{font-size:clamp(2rem,4.4vw,3rem);line-height:1.08;margin:0 0 18px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .sub{font-size:1.14rem;color:#D6DEEF;margin:0 0 26px;max-width:34ch}
+.cta-note{margin-top:14px;font-size:.96rem;color:#A9B6D6}
+.alert-card{background:#fff;color:var(--ink);border-radius:16px;padding:22px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.alert-card .ah{display:flex;align-items:center;gap:8px;color:var(--alert);font-weight:700;font-size:.95rem}
+.alert-card h3{font-family:"Fraunces",serif;margin:12px 0 2px;font-size:1.2rem}
+.alert-card .meta{font-size:.9rem;color:var(--muted)}
+.alert-card .vs{margin:14px 0;padding:12px 14px;background:var(--bg);border-radius:10px;font-size:.95rem}
+.alert-card .vs b{color:var(--navy)}
+.deadline{display:flex;align-items:center;gap:10px;margin-top:6px;font-weight:600;color:var(--alert)}
+.deadline .n{font-family:"Fraunces",serif;font-size:1.8rem}
+section.band{padding:56px 0}
+.band h2{font-size:clamp(1.6rem,3.4vw,2.2rem);margin:0 0 8px}
+.lead{color:var(--muted);margin:0 0 30px;max-width:60ch;font-size:1.08rem}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{border:1.5px solid var(--line);border-radius:16px;padding:24px}
+.step .n{font-family:"Fraunces",serif;color:var(--navy);font-weight:600;font-size:1.1rem}
+.step b{display:block;font-size:1.1rem;margin:8px 0 6px}
+.step p{margin:0;color:var(--muted);font-size:.98rem}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+.why .card{background:var(--bg);border-radius:14px;padding:22px}
+.why b{display:block;margin-bottom:4px}
+.why p{margin:0;color:var(--muted);font-size:.98rem}
+.pricing{background:var(--navy);color:#fff;border-radius:24px;padding:46px;text-align:center;margin:10px 0 56px}
+.pricing h2{color:#fff}
+.price{font-family:"Fraunces",serif;font-size:3rem;font-weight:600;margin:14px 0 2px}
+.price small{display:block;font:400 1rem "Inter",sans-serif;color:#A9B6D6;margin-top:4px}
+.plist{list-style:none;padding:0;margin:18px auto 26px;max-width:420px;text-align:left}
+.plist li{padding:8px 0 8px 30px;position:relative;color:#E6ECF8}
+.plist li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
+.btn.gold{background:var(--accent);color:var(--accent-ink)}
+footer{border-top:1px solid var(--line);padding:26px 0 50px;color:var(--muted);font-size:.9rem;display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
+footer a{color:var(--muted)}
+.disclaimer{max-width:70ch}
+@media(max-width:780px){.hero{grid-template-columns:1fr;padding:32px 22px}.steps,.why{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><span class="dot"></span>Markwatch</div>
+    <a class="btn sm" href="https://buy.stripe.com/7sY28t3UZ4My4ZW13e0Ny05">Start watching · £24.99/mo</a>
+  </header>
+
+  <!-- FIRST SCREEN: what you get · how (one line) · proof · one CTA · price -->
+  <div class="hero">
+    <div>
+      <p class="eyebrow">For UK brand owners, founders & online sellers</p>
+      <h1 class="serif">Know the moment someone files a trademark <em>like yours.</em></h1>
+      <p class="sub">Add your brand once. Markwatch scans every new UK &amp; EU trademark filing each week and warns you in time to object — before it turns into an expensive fight.</p>
+      <a class="btn gold" href="https://buy.stripe.com/7sY28t3UZ4My4ZW13e0Ny05">Start watching my brand — £24.99/mo</a>
+      <p class="cta-note">£24.99/month · cancel anytime · first scan within days</p>
+    </div>
+    <div class="alert-card" aria-label="Example alert">
+      <div class="ah">⚠ Possible conflict found</div>
+      <h3 class="serif">“LUMEN SKIN”</h3>
+      <p class="meta">Filed 14 Oct 2026 · UK IPO · Class 3 (cosmetics)</p>
+      <div class="vs">Looks close to your mark <b>“LUMENE SKIN”</b> (Class 3). Same goods, one letter apart.</div>
+      <div class="deadline"><span class="n">43</span> days left to file an opposition</div>
+    </div>
+  </div>
+
+  <section class="band">
+    <h2 class="serif">How it works</h2>
+    <p class="lead">You don’t have to understand trademark law. You just need to know in time.</p>
+    <div class="steps">
+      <div class="step"><span class="n">01</span><b>Add your brand</b><p>Your name and what you sell. Takes a minute.</p></div>
+      <div class="step"><span class="n">02</span><b>We watch the registers</b><p>Every new UK &amp; EU filing, every week, matched against your mark.</p></div>
+      <div class="step"><span class="n">03</span><b>You’re warned in time</b><p>The moment something collides, you get an alert — with your opposition deadline counting down.</p></div>
+    </div>
+  </section>
+
+  <section class="band" style="padding-top:0">
+    <h2 class="serif">Why it matters</h2>
+    <p class="lead">Once a conflicting mark is published, you have roughly two months to object cheaply. Miss that window and it becomes a slow, costly legal battle — or you lose the name you built.</p>
+    <div class="why">
+      <div class="card"><b>Catch copycats in the 2-month window</b><p>Opposing early is cheap. Fixing it later means lawyers, cancellation actions and rebrands.</p></div>
+      <div class="card"><b>UK &amp; EU filings covered</b><p>We watch the official registers so you don’t have to check them yourself.</p></div>
+      <div class="card"><b>Plain English, not legal jargon</b><p>“This mark looks close to yours, here’s your deadline.” That’s it.</p></div>
+      <div class="card"><b>You stay in control</b><p>We spot it and give you the deadline. A solicitor files the opposition — we just make sure you don’t miss it.</p></div>
+    </div>
+  </section>
+
+  <div class="pricing" id="price">
+    <p class="eyebrow" style="color:#A9B6D6">Protect the brand you built</p>
+    <h2 class="serif">One brand, watched every week — far less than a dispute costs.</h2>
+    <div class="price serif">£24.99<small>per month · cancel anytime</small></div>
+    <ul class="plist">
+      <li>Weekly scan of new UK &amp; EU trademark filings</li>
+      <li>Alerts the moment a conflicting mark appears</li>
+      <li>Your opposition deadline, counted down for you</li>
+      <li>Plain-English, no legal jargon</li>
+    </ul>
+    <a class="btn gold" id="buy" href="https://buy.stripe.com/7sY28t3UZ4My4ZW13e0Ny05">Start watching my brand — £24.99/mo</a>
+  </div>
+
+  <footer>
+    <span class="disclaimer">Markwatch is a monitoring and alert service — not a law firm, and not legal advice. We tell you when a potentially conflicting mark is filed and when your deadline falls; a qualified attorney handles any opposition. Data from official UK IPO &amp; EU trademark registers.</span>
+    <a href="/privacy">Privacy</a>
+  </footer>
+</div>
+<script>
+/* Fire funnel counter + Meta InitiateCheckout on any Stripe CTA click */
+(function(){
+  var links = document.querySelectorAll('a[href^="https://buy.stripe.com/"]');
+  Array.prototype.forEach.call(links, function(a){
+    a.addEventListener('click', function(){
+      if (window.mwCount) mwCount('buy');
+      if (window.mwTrack) mwTrack('track','InitiateCheckout',{value:24.99,currency:'GBP'});
+    });
+  });
+})();
+</script>
+</body>
+</html>
