@@ -6,122 +6,208 @@
 <title>Markwatch — know the moment someone files a trademark like yours</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600&family=Hanken+Grotesk:wght@400;500;600&family=Geist+Mono:wght@500&display=swap">
 <link rel="stylesheet" href="banner.css">
 <script src="pixel.js"></script>
 <style>
 :root{
-  --navy:#0F1E3D;--ink:#12213F;--paper:#fff;--bg:#F4F6FB;--line:#E2E7F2;--muted:#5A678A;
-  --accent:#F4C542;--accent-ink:#1A1300;--alert:#C0392B;--good:#1A7F4B;
+  --ink:#0E1B38;--body:#3C4663;--muted:#6B748C;--faint:#9AA2B6;
+  --bg:#fff;--line:#E6E8EF;--line-d:#D6D9E2;--soft:#F6F7F9;--gold:#E7B32B;
+  --ok:#2BA26B;--okbg:#ECF6F0;--bad:#D23F32;--badbg:#FBEDEB;
 }
 *{box-sizing:border-box}
-body{margin:0;font:400 17px/1.6 "Inter","Segoe UI",sans-serif;color:var(--ink);background:var(--paper)}
-.wrap{max-width:1060px;margin-inline:auto;padding:0 20px}
-.serif{font-family:"Fraunces",Georgia,serif;font-weight:600;letter-spacing:-.01em}
-header.top{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
-.brand{font-family:"Fraunces",serif;font-weight:600;font-size:1.4rem;color:var(--navy);display:flex;align-items:center;gap:8px}
-.brand .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(244,197,66,.25)}
-.btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;border-radius:10px;padding:14px 24px;text-decoration:none;font-size:1.02rem;text-align:center;border:0;cursor:pointer}
-.btn:hover{filter:brightness(1.12)}
-.btn.sm{padding:9px 16px;font-size:.95rem}
-.hero{background:var(--navy);color:#fff;border-radius:24px;padding:48px clamp(22px,5vw,60px);margin-top:8px;display:grid;grid-template-columns:1.08fr .92fr;gap:44px;align-items:center}
-.eyebrow{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#A9B6D6;font-weight:600;margin:0 0 14px}
-.hero h1{font-size:clamp(2rem,4.4vw,3rem);line-height:1.08;margin:0 0 18px}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero .sub{font-size:1.14rem;color:#D6DEEF;margin:0 0 26px;max-width:34ch}
-.cta-note{margin-top:14px;font-size:.96rem;color:#A9B6D6}
-.alert-card{background:#fff;color:var(--ink);border-radius:16px;padding:22px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
-.alert-card .ah{display:flex;align-items:center;gap:8px;color:var(--alert);font-weight:700;font-size:.95rem}
-.alert-card h3{font-family:"Fraunces",serif;margin:12px 0 2px;font-size:1.2rem}
-.alert-card .meta{font-size:.9rem;color:var(--muted)}
-.alert-card .vs{margin:14px 0;padding:12px 14px;background:var(--bg);border-radius:10px;font-size:.95rem}
-.alert-card .vs b{color:var(--navy)}
-.deadline{display:flex;align-items:center;gap:10px;margin-top:6px;font-weight:600;color:var(--alert)}
-.deadline .n{font-family:"Fraunces",serif;font-size:1.8rem}
-section.band{padding:56px 0}
-.band h2{font-size:clamp(1.6rem,3.4vw,2.2rem);margin:0 0 8px}
-.lead{color:var(--muted);margin:0 0 30px;max-width:60ch;font-size:1.08rem}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.step{border:1.5px solid var(--line);border-radius:16px;padding:24px}
-.step .n{font-family:"Fraunces",serif;color:var(--navy);font-weight:600;font-size:1.1rem}
-.step b{display:block;font-size:1.1rem;margin:8px 0 6px}
-.step p{margin:0;color:var(--muted);font-size:.98rem}
-.why{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
-.why .card{background:var(--bg);border-radius:14px;padding:22px}
-.why b{display:block;margin-bottom:4px}
-.why p{margin:0;color:var(--muted);font-size:.98rem}
-.pricing{background:var(--navy);color:#fff;border-radius:24px;padding:46px;text-align:center;margin:10px 0 56px}
-.pricing h2{color:#fff}
-.price{font-family:"Fraunces",serif;font-size:3rem;font-weight:600;margin:14px 0 2px}
-.price small{display:block;font:400 1rem "Inter",sans-serif;color:#A9B6D6;margin-top:4px}
-.plist{list-style:none;padding:0;margin:18px auto 26px;max-width:420px;text-align:left}
-.plist li{padding:8px 0 8px 30px;position:relative;color:#E6ECF8}
-.plist li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
-.btn.gold{background:var(--accent);color:var(--accent-ink)}
-footer{border-top:1px solid var(--line);padding:26px 0 50px;color:var(--muted);font-size:.9rem;display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
-footer a{color:var(--muted)}
-.disclaimer{max-width:70ch}
-@media(max-width:780px){.hero{grid-template-columns:1fr;padding:32px 22px}.steps,.why{grid-template-columns:1fr}}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--body);background:var(--bg);font:400 17px/1.6 "Hanken Grotesk","Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.disp{font-family:"Bricolage Grotesque","Hanken Grotesk",sans-serif;letter-spacing:-.015em}
+.mono{font-family:"Geist Mono",ui-monospace,monospace;font-weight:500;letter-spacing:.04em;text-transform:uppercase;font-size:.74rem;color:var(--ink)}
+.wrap{max-width:1120px;margin-inline:auto;padding:0 28px}
+a{color:inherit}
+/* reveal */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none}}
+/* nav */
+nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0}
+.brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:1.3rem;letter-spacing:-.02em;color:var(--ink);display:flex;align-items:center;gap:9px}
+.brand .dot{width:11px;height:11px;border-radius:50%;background:var(--gold)}
+.navlinks{display:flex;gap:32px;font-size:.96rem;color:var(--muted)}
+.navlinks a{text-decoration:none}.navlinks a:hover{color:var(--ink)}
+/* sharp buttons — folk style */
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:1rem;border-radius:3px;padding:16px 30px;text-decoration:none;border:0;cursor:pointer;transition:background .15s}
+.btn.dark{background:var(--ink);color:#fff}
+.btn.dark:hover{background:#09142a}
+/* hero */
+.hero{text-align:center;padding:76px 0 0}
+.hero .eyebrow{display:inline-block;border-bottom:1.5px solid var(--gold);padding-bottom:2px}
+.hero h1{font-weight:500;font-size:clamp(2.7rem,6.6vw,4.9rem);line-height:1.0;margin:26px auto 24px;max-width:16ch;color:var(--ink)}
+.hero .sub{font-size:1.2rem;line-height:1.5;color:var(--muted);max-width:44ch;margin:0 auto 36px}
+.cta-note{margin-top:18px;font-size:.9rem;color:var(--faint)}
+/* grainy band behind dashboard — folk signature */
+.band{position:relative;margin-top:64px}
+.band::before{content:"";position:absolute;left:50%;transform:translateX(-50%);top:120px;width:100vw;height:460px;z-index:-1;
+  background:linear-gradient(180deg,#fff 0%,#E9ECF3 36%,#DADEEA 60%,#fff 100%),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  background-blend-mode:multiply;background-size:cover,160px}
+/* product mockup — square corners */
+.shot{position:relative;max-width:980px;margin:0 auto;background:#fff;border:1px solid var(--line-d);border-radius:5px;box-shadow:0 40px 90px rgba(14,27,56,.16);overflow:hidden}
+.shot .sweep{position:absolute;top:50px;left:0;right:0;height:120px;background:linear-gradient(180deg,transparent,rgba(231,179,43,.12),transparent);pointer-events:none;opacity:0;animation:sweep 5.5s ease-in-out 1.2s infinite}
+@keyframes sweep{0%{transform:translateY(-60px);opacity:0}8%{opacity:1}50%{opacity:1}92%{opacity:0}100%{transform:translateY(560px);opacity:0}}
+@media(prefers-reduced-motion:reduce){.shot .sweep{display:none}}
+.shot .topbar{display:flex;align-items:center;gap:7px;padding:13px 16px;border-bottom:1px solid var(--line);background:#fff}
+.shot .topbar .tl{width:11px;height:11px;border-radius:50%;background:#E2E5EC}
+.shot .topbar .u{margin-left:12px;font-size:.82rem;color:var(--faint);font-family:"Geist Mono",monospace}
+.shot .b{display:grid;grid-template-columns:212px 1fr}
+.side{border-right:1px solid var(--line);padding:18px 14px;background:var(--soft)}
+.side .sb{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:8px;font-size:1rem;margin:4px 6px 16px}
+.side .sb .d{width:9px;height:9px;border-radius:50%;background:var(--gold)}
+.nav-i{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-radius:4px;color:var(--muted);font-size:.92rem;font-weight:500;margin-bottom:2px}
+.nav-i.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(14,27,56,.06)}
+.nav-i .nb{background:var(--bad);color:#fff;font-size:.72rem;font-weight:700;border-radius:999px;padding:1px 7px}
+.nav-i .nb.pulse{animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(210,63,50,.45)}50%{box-shadow:0 0 0 7px rgba(210,63,50,0)}}
+@media(prefers-reduced-motion:reduce){.nav-i .nb.pulse{animation:none}}
+.main{padding:22px 24px}
+.main-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.main-h h4{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;color:var(--ink);margin:0;font-size:1.18rem}
+.addb{font-size:.84rem;font-weight:600;color:var(--ink);border:1px solid var(--line-d);border-radius:4px;padding:7px 12px;background:#fff}
+.mk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+.mk{border:1px solid var(--line);border-radius:5px;padding:14px;background:#fff;text-align:left}
+.mk.a{border-color:#F0C8C3;background:#FFFAF9}
+.mk-n{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;color:var(--ink);font-size:.98rem}
+.mk-m{font-size:.8rem;color:var(--faint);margin:2px 0 10px}
+.st{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;border-radius:4px;padding:4px 10px}
+.st.ok{background:var(--okbg);color:var(--ok)}
+.st.bad{background:var(--badbg);color:var(--bad)}
+.alertbox{border:1px solid #F0C8C3;background:#FFF6F5;border-radius:5px;padding:16px 18px;text-align:left;opacity:0;transform:translateY(10px) scale(.985);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.2,1)}
+.alertbox.landed{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.alertbox{opacity:1;transform:none}}
+.alertbox .t{font-family:"Geist Mono",monospace;font-weight:500;letter-spacing:.04em;color:var(--bad);font-size:.74rem;display:flex;align-items:center;gap:7px}
+.alertbox .tri{width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:11px solid var(--bad)}
+.alertbox .r{margin:8px 0 2px;color:var(--ink)}
+.alertbox .r b{font-family:"Bricolage Grotesque",sans-serif}
+.alertbox .s{font-size:.9rem;color:var(--muted)}
+.alertbox .dl{display:inline-block;margin-top:12px;background:#fff;border:1px solid #F0C8C3;color:var(--bad);font-weight:700;border-radius:4px;padding:7px 12px;font-size:.9rem}
+/* trust */
+.trust{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+.chip{display:inline-flex;align-items:center;gap:9px;font-size:.92rem;color:var(--muted);font-weight:500}
+.chip .d{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+/* sections */
+section{padding:92px 0}
+.center{text-align:center;max-width:680px;margin-inline:auto}
+h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:clamp(1.9rem,4vw,2.8rem);letter-spacing:-.015em;color:var(--ink);margin:14px 0 12px;line-height:1.08}
+.lead{color:var(--muted);font-size:1.12rem;margin:0 auto 46px;max-width:54ch}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.card{padding:34px 28px;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.grid3 .card:nth-child(3n){border-right:0}
+.card .k{font-family:"Geist Mono",monospace;color:var(--gold);font-weight:500;font-size:.82rem}
+.card b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:1.2rem;color:var(--ink);margin:14px 0 8px}
+.card p{margin:0;color:var(--muted);font-size:1rem}
+/* pricing */
+.price-wrap{max-width:540px;margin:0 auto;background:#fff;border:1px solid var(--line-d);border-radius:5px;padding:48px;text-align:center}
+.price{font-family:"Bricolage Grotesque",sans-serif;font-size:3.4rem;font-weight:500;letter-spacing:-.02em;color:var(--ink);margin:10px 0 2px}
+.price small{display:block;font:400 1rem "Hanken Grotesk",sans-serif;color:var(--faint);margin-top:8px}
+.plist{list-style:none;padding:0;margin:24px auto 30px;max-width:360px;text-align:left}
+.plist li{padding:9px 0 9px 26px;position:relative;color:var(--body)}
+.plist li::before{content:"";position:absolute;left:0;top:15px;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+/* footer */
+footer{border-top:1px solid var(--line);padding:38px 0 64px;color:var(--faint);font-size:.88rem;display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between}
+footer a{color:var(--faint)}.disclaimer{max-width:74ch}
+@media(max-width:820px){.navlinks{display:none}.shot .b{grid-template-columns:1fr}.side{display:none}.mk-grid{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.grid3 .card{border-right:0}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header class="top">
+  <nav>
     <div class="brand"><span class="dot"></span>Markwatch</div>
-    <a class="btn sm" href="https://buy.stripe.com/7sY28t3UZ4My4ZW13e0Ny05">Start watching · £24.99/mo</a>
+    <div class="navlinks"><a href="#how">How it works</a><a href="#why">Why</a><a href="#price">Pricing</a></div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <p class="mono reveal"><span class="eyebrow">[ TRADEMARK MONITORING · UK &amp; EU ]</span></p>
+    <h1 class="disp reveal">Know the moment someone files a trademark like yours</h1>
+    <p class="sub reveal">Add your brand once. We watch every new UK &amp; EU trademark filing and warn you in time to object — before it becomes an expensive fight.</p>
+    <a class="btn dark reveal" href="https://buy.stripe.com/7sY28t3UZ4My4ZW13e0Ny05">Start watching my brand</a>
+    <p class="cta-note reveal">£24.99/month · cancel anytime · first scan within days</p>
+
+    <!-- grainy band + mockup -->
+    <div class="band reveal">
+      <div class="shot" aria-label="Markwatch dashboard preview">
+        <div class="sweep"></div>
+        <div class="topbar"><span class="tl"></span><span class="tl"></span><span class="tl"></span><span class="u">app.markwatch — watchlist</span></div>
+        <div class="b">
+          <aside class="side">
+            <div class="sb"><span class="d"></span>Markwatch</div>
+            <div class="nav-i on">Watchlist</div>
+            <div class="nav-i">Alerts <span class="nb pulse">1</span></div>
+            <div class="nav-i">Settings</div>
+          </aside>
+          <div class="main">
+            <div class="main-h"><h4>Your brands</h4><span class="addb">+ Add brand</span></div>
+            <div class="mk-grid">
+              <div class="mk a"><div class="mk-n">LUMENE SKIN</div><div class="mk-m">Class 3 · cosmetics</div><span class="st bad">1 conflict</span></div>
+              <div class="mk"><div class="mk-n">VELVET &amp; OAK</div><div class="mk-m">Class 25 · apparel</div><span class="st ok">Watching</span></div>
+              <div class="mk"><div class="mk-n">AURELIA</div><div class="mk-m">Class 14 · jewellery</div><span class="st ok">Watching</span></div>
+            </div>
+            <div class="alertbox">
+              <div class="t"><span class="tri"></span>POSSIBLE CONFLICT</div>
+              <p class="r"><b>“LUMEN SKIN”</b> filed today · UK IPO · Class 3</p>
+              <p class="s">Looks close to your “LUMENE SKIN” — same goods, one letter apart.</p>
+              <span class="dl">43 days left to object</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trust reveal">
+      <span class="chip"><span class="d"></span>Official UK IPO data</span>
+      <span class="chip"><span class="d"></span>EUIPO / TMview</span>
+      <span class="chip"><span class="d"></span>No spreadsheets, no checking</span>
+    </div>
   </header>
 
-  <!-- FIRST SCREEN: what you get · how (one line) · proof · one CTA · price -->
-  <div class="hero">
-    <div>
-      <p class="eyebrow">For UK brand owners, founders & online sellers</p>
-      <h1 class="serif">Know the moment someone files a trademark <em>like yours.</em></h1>
-      <p class="sub">Add your brand once. Markwatch scans every new UK &amp; EU trademark filing each week and warns you in time to object — before it turns into an expensive fight.</p>
-      <a class="btn gold" href="https://buy.stripe.com/7sY28t3UZ4My4ZW13e0Ny05">Start watching my brand — £24.99/mo</a>
-      <p class="cta-note">£24.99/month · cancel anytime · first scan within days</p>
+  <!-- HOW -->
+  <section id="how">
+    <div class="center">
+      <p class="mono">[ HOW IT WORKS ]</p>
+      <h2 class="disp">You don’t need to understand trademark law. Just to know in time.</h2>
     </div>
-    <div class="alert-card" aria-label="Example alert">
-      <div class="ah">⚠ Possible conflict found</div>
-      <h3 class="serif">“LUMEN SKIN”</h3>
-      <p class="meta">Filed 14 Oct 2026 · UK IPO · Class 3 (cosmetics)</p>
-      <div class="vs">Looks close to your mark <b>“LUMENE SKIN”</b> (Class 3). Same goods, one letter apart.</div>
-      <div class="deadline"><span class="n">43</span> days left to file an opposition</div>
-    </div>
-  </div>
-
-  <section class="band">
-    <h2 class="serif">How it works</h2>
-    <p class="lead">You don’t have to understand trademark law. You just need to know in time.</p>
-    <div class="steps">
-      <div class="step"><span class="n">01</span><b>Add your brand</b><p>Your name and what you sell. Takes a minute.</p></div>
-      <div class="step"><span class="n">02</span><b>We watch the registers</b><p>Every new UK &amp; EU filing, every week, matched against your mark.</p></div>
-      <div class="step"><span class="n">03</span><b>You’re warned in time</b><p>The moment something collides, you get an alert — with your opposition deadline counting down.</p></div>
+    <div class="grid3">
+      <div class="card reveal"><span class="k">01</span><b>Add your brand</b><p>Your name and what you sell. Takes a minute.</p></div>
+      <div class="card reveal"><span class="k">02</span><b>We watch the registers</b><p>Every new UK &amp; EU filing, every week, matched against your mark.</p></div>
+      <div class="card reveal"><span class="k">03</span><b>You’re warned in time</b><p>The moment something collides, you get an alert — deadline counting down.</p></div>
     </div>
   </section>
 
-  <section class="band" style="padding-top:0">
-    <h2 class="serif">Why it matters</h2>
-    <p class="lead">Once a conflicting mark is published, you have roughly two months to object cheaply. Miss that window and it becomes a slow, costly legal battle — or you lose the name you built.</p>
-    <div class="why">
-      <div class="card"><b>Catch copycats in the 2-month window</b><p>Opposing early is cheap. Fixing it later means lawyers, cancellation actions and rebrands.</p></div>
-      <div class="card"><b>UK &amp; EU filings covered</b><p>We watch the official registers so you don’t have to check them yourself.</p></div>
-      <div class="card"><b>Plain English, not legal jargon</b><p>“This mark looks close to yours, here’s your deadline.” That’s it.</p></div>
-      <div class="card"><b>You stay in control</b><p>We spot it and give you the deadline. A solicitor files the opposition — we just make sure you don’t miss it.</p></div>
+  <!-- WHY -->
+  <section id="why" style="padding-top:0">
+    <div class="center">
+      <p class="mono">[ WHY IT MATTERS ]</p>
+      <h2 class="disp">Once a copycat is published, the clock starts.</h2>
+      <p class="lead">You get roughly two months to object cheaply. Miss that window and it becomes a slow, costly legal battle — or you lose the name you built.</p>
+    </div>
+    <div class="grid3">
+      <div class="card reveal"><b>Catch it in the window</b><p>Opposing early is cheap. Fixing it later means lawyers, cancellation actions and rebrands.</p></div>
+      <div class="card reveal"><b>UK &amp; EU, watched for you</b><p>We monitor the official registers so you never have to check them yourself.</p></div>
+      <div class="card reveal"><b>Plain English</b><p>“This mark looks close to yours, here’s your deadline.” No jargon, no law degree.</p></div>
     </div>
   </section>
 
-  <div class="pricing" id="price">
-    <p class="eyebrow" style="color:#A9B6D6">Protect the brand you built</p>
-    <h2 class="serif">One brand, watched every week — far less than a dispute costs.</h2>
-    <div class="price serif">£24.99<small>per month · cancel anytime</small></div>
-    <ul class="plist">
-      <li>Weekly scan of new UK &amp; EU trademark filings</li>
-      <li>Alerts the moment a conflicting mark appears</li>
-      <li>Your opposition deadline, counted down for you</li>
-      <li>Plain-English, no legal jargon</li>
-    </ul>
-    <a class="btn gold" id="buy" href="https://buy.stripe.com/7sY28t3UZ4My4ZW13e0Ny05">Start watching my brand — £24.99/mo</a>
-  </div>
+  <!-- PRICING -->
+  <section id="price" style="padding-top:0">
+    <div class="center" style="margin-bottom:38px"><p class="mono">[ PRICING ]</p><h2 class="disp">One brand, watched every week.</h2></div>
+    <div class="price-wrap reveal">
+      <div class="price disp">£24.99<small>per month · cancel anytime · far less than a dispute</small></div>
+      <ul class="plist">
+        <li>Weekly scan of new UK &amp; EU trademark filings</li>
+        <li>Alerts the moment a conflicting mark appears</li>
+        <li>Your opposition deadline, counted down for you</li>
+        <li>Plain-English, no legal jargon</li>
+      </ul>
+      <a class="btn dark" id="buy" href="https://buy.stripe.com/7sY28t3UZ4My4ZW13e0Ny05">Start watching my brand</a>
+    </div>
+  </section>
 
   <footer>
     <span class="disclaimer">Markwatch is a monitoring and alert service — not a law firm, and not legal advice. We tell you when a potentially conflicting mark is filed and when your deadline falls; a qualified attorney handles any opposition. Data from official UK IPO &amp; EU trademark registers.</span>
@@ -129,7 +215,31 @@ footer a{color:var(--muted)}
   </footer>
 </div>
 <script>
-/* Fire funnel counter + Meta InitiateCheckout on any Stripe CTA click */
+/* scroll reveals — staggered */
+(function(){
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { items.forEach(function(el){el.classList.add('in');}); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        var sibs = Array.prototype.slice.call(e.target.parentNode.querySelectorAll(':scope > .reveal'));
+        var i = Math.max(0, sibs.indexOf(e.target));
+        setTimeout(function(){ e.target.classList.add('in'); }, i * 90);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: .15, rootMargin: '0px 0px -8% 0px' });
+  items.forEach(function(el){ io.observe(el); });
+})();
+/* live alert lands a beat after dashboard appears */
+(function(){
+  var box = document.querySelector('.alertbox'); if (!box) return;
+  var fired = false;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting && !fired){ fired = true; setTimeout(function(){ box.classList.add('landed'); }, 900); io.disconnect(); } });
+  }, { threshold: .4 });
+  io.observe(box);
+})();
 (function(){
   var links = document.querySelectorAll('a[href^="https://buy.stripe.com/"]');
   Array.prototype.forEach.call(links, function(a){
