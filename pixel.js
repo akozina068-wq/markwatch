@@ -1,6 +1,6 @@
 /* Meta Pixel — loads only after cookie consent (UK PECR). Shared by every page. */
 (function(){
-  var PIXEL = '2323893205098670'; /* Clario_ads */
+  var PIXEL = '1194228084963338'; /* Clario_ads */
   var queued = [];
   function load(){
     if (window.fbq) return;
